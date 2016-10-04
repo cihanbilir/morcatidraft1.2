@@ -1,5 +1,6 @@
-<h1>New giris_form</h1>
+<%- model_class = GirisForm -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => GirisForm %></h1>
+</div>
+<%= render :partial => 'form' %>
 
-<%= render 'form' %>
-
-<%= link_to 'Back', giris_forms_path %>

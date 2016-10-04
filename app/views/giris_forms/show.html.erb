@@ -1,29 +1,32 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = GirisForm -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => GirisForm %></h1>
+</div>
 
-<p>
-  <strong>Ilk basvuru tarihi:</strong>
-  <%= @giris_form.ilk_basvuru_tarihi %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:ilk_basvuru_tarihi) %></dt>
+      <dd><pre class="prettyprint"><%= @giris_form.ilk_basvuru_tarihi %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:mc_destek_aliyor) %></dt>
+      <dd><pre class="prettyprint"><%= @giris_form.mc_destek_aliyor %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:iletisime_gecen) %></dt>
+      <dd><pre class="prettyprint"><%= @giris_form.iletisime_gecen %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:iletisime_gecme_yolu) %></dt>
+      <dd><pre class="prettyprint"><%= @giris_form.iletisime_gecme_yolu %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:notlar) %></dt>
+      <dd><pre class="prettyprint"><%= @giris_form.notlar %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Mc destek aliyor:</strong>
-  <%= @giris_form.mc_destek_aliyor %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              giris_forms_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_giris_form_path(@giris_form), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              giris_form_path(@giris_form),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Iletisime gecen:</strong>
-  <%= @giris_form.iletisime_gecen %>
-</p>
-
-<p>
-  <strong>Iletisime gecme yolu:</strong>
-  <%= @giris_form.iletisime_gecme_yolu %>
-</p>
-
-<p>
-  <strong>Notlar:</strong>
-  <%= @giris_form.notlar %>
-</p>
-
-<%= link_to 'Edit', edit_giris_form_path(@giris_form) %> |
-<%= link_to 'Back', giris_forms_path %>

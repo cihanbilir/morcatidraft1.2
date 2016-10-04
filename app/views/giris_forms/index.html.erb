@@ -1,33 +1,44 @@
-<h1>Listing giris_forms</h1>
-
-<table>
+<%- model_class = GirisForm -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => GirisForm %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Ilk basvuru tarihi</th>
-      <th>Mc destek aliyor</th>
-      <th>Iletisime gecen</th>
-      <th>Iletisime gecme yolu</th>
-      <th>Notlar</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:ilk_basvuru_tarihi) %></th>
+      <th><%= model_class.human_attribute_name(:mc_destek_aliyor) %></th>
+      <th><%= model_class.human_attribute_name(:iletisime_gecen) %></th>
+      <th><%= model_class.human_attribute_name(:iletisime_gecme_yolu) %></th>
+      <th><%= model_class.human_attribute_name(:notlar) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @giris_forms.each do |giris_form| %>
       <tr>
+        <td><%= giris_form.id %></td>
         <td><%= giris_form.ilk_basvuru_tarihi %></td>
         <td><%= giris_form.mc_destek_aliyor %></td>
         <td><%= giris_form.iletisime_gecen %></td>
         <td><%= giris_form.iletisime_gecme_yolu %></td>
         <td><%= giris_form.notlar %></td>
-        <td><%= link_to 'Show', giris_form %></td>
-        <td><%= link_to 'Edit', edit_giris_form_path(giris_form) %></td>
-        <td><%= link_to 'Destroy', giris_form, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l giris_form.created_at, format: :long %></td>
+        <td>
+          <%= link_to giris_form_path(giris_form), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to giris_form_path(giris_form), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Giris form', new_giris_form_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_giris_form_path,
+            :class => 'btn btn-primary' %>
