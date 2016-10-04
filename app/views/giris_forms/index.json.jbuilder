@@ -1,0 +1,1 @@
+json.array! @giris_forms, partial: 'giris_forms/giris_form', as: :giris_form

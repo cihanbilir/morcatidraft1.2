@@ -1,0 +1,15 @@
+<%= simple_form_for(@giris_form) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :ilk_basvuru_tarihi %>
+    <%= f.input :mc_destek_aliyor %>
+    <%= f.input :iletisime_gecen %>
+    <%= f.input :iletisime_gecme_yolu %>
+    <%= f.input :notlar %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

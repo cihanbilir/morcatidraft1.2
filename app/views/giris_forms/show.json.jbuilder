@@ -1,0 +1,1 @@
+json.partial! "giris_forms/giris_form", giris_form: @giris_form

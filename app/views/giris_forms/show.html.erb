@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Ilk basvuru tarihi:</strong>
+  <%= @giris_form.ilk_basvuru_tarihi %>
+</p>
+
+<p>
+  <strong>Mc destek aliyor:</strong>
+  <%= @giris_form.mc_destek_aliyor %>
+</p>
+
+<p>
+  <strong>Iletisime gecen:</strong>
+  <%= @giris_form.iletisime_gecen %>
+</p>
+
+<p>
+  <strong>Iletisime gecme yolu:</strong>
+  <%= @giris_form.iletisime_gecme_yolu %>
+</p>
+
+<p>
+  <strong>Notlar:</strong>
+  <%= @giris_form.notlar %>
+</p>
+
+<%= link_to 'Edit', edit_giris_form_path(@giris_form) %> |
+<%= link_to 'Back', giris_forms_path %>

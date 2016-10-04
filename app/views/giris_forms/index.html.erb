@@ -1,0 +1,33 @@
+<h1>Listing giris_forms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ilk basvuru tarihi</th>
+      <th>Mc destek aliyor</th>
+      <th>Iletisime gecen</th>
+      <th>Iletisime gecme yolu</th>
+      <th>Notlar</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @giris_forms.each do |giris_form| %>
+      <tr>
+        <td><%= giris_form.ilk_basvuru_tarihi %></td>
+        <td><%= giris_form.mc_destek_aliyor %></td>
+        <td><%= giris_form.iletisime_gecen %></td>
+        <td><%= giris_form.iletisime_gecme_yolu %></td>
+        <td><%= giris_form.notlar %></td>
+        <td><%= link_to 'Show', giris_form %></td>
+        <td><%= link_to 'Edit', edit_giris_form_path(giris_form) %></td>
+        <td><%= link_to 'Destroy', giris_form, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Giris form', new_giris_form_path %>
