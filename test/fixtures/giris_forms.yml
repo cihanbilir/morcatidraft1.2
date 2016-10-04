@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ilk_basvuru_tarihi: 2016-10-04
+  mc_destek_aliyor: MyString
+  iletisime_gecen: MyString
+  iletisime_gecme_yolu: MyString
+  notlar: MyText
+
+two:
+  ilk_basvuru_tarihi: 2016-10-04
+  mc_destek_aliyor: MyString
+  iletisime_gecen: MyString
+  iletisime_gecme_yolu: MyString
+  notlar: MyText
