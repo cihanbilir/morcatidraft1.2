@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :basvurans
+
   resources :gonullus
 
   resources :giris_forms
